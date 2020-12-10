@@ -1,12 +1,29 @@
-# install brew
-> /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Use pre-compiled binary to run Paicoind on MacOS
 
-# install dependencies
-> brew install berkeley-db@4 boost
+## 1. install brew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-# untar pre-compiled binary
-> tar xzf ./Catalina-paicoin.tar.gz
+## 2. install dependencies
+```
+brew install berkeley-db@4 boost
+```
 
-# execute paicoind
-> cd ./Catalina-paicoin
-> ./paicoind
+## 3. download pre-compiled binary
+```
+git clone https://github.com/ybAmazing/paicoin_pre-compiled.git
+```
+
+## 4. execute paicoind
+```
+cd ./paicoin_pre-compiled/MacOS
+tar xzf ./Catalina-paicoin.tar.gz
+cd ./Catalina-paicoin
+./paicoind --daemon=1
+```
+
+## 5. check
+```
+less ~/Library/Application\ Support/PAIcoin/debug.log
+```
