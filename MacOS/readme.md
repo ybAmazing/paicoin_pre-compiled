@@ -1,4 +1,4 @@
-# Use pre-compiled binary to run Paicoind on MacOS
+# Use pre-compiled binary to run Paicoin on MacOS
 
 ## 1. install brew
 ```
@@ -7,8 +7,10 @@
 
 ## 2. install dependencies
 ```
-brew install berkeley-db@4 boost
+brew install git miniupnpc libevent berkeley-db@4 boost
 ```
+required minimal version:
+miniupnpc@2.1 libevent@2.1.12 berkeley-db@4.8.30 boost@1.72
 
 ## 3. download pre-compiled binary
 ```
@@ -22,8 +24,11 @@ tar xzf ./Catalina-paicoin.tar.gz
 cd ./Catalina-paicoin
 ./paicoind --daemon=1
 ```
+it will cost some minutes to synchronize the blockchain.
 
 ## 5. check
 ```
+./paicoin-cli getmininginfo
+./paicoin-cli getstakeinfo
 less ~/Library/Application\ Support/PAIcoin/debug.log
 ```
